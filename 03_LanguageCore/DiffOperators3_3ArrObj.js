@@ -31,7 +31,7 @@ const staff = [
 // access nested properties via optional chaining operator
 console.log(staff[0].firstName, staff[0].contact?.phone, '\n');
 
-// nested properties via optional chaining operator as a function
+// nested properties via optional chaining operator in a function
 function getStaffContactPhone(arr, fName) {
   let contact = `${fName} not found`;
   for (let i = 0; i < arr.length; i++) {
