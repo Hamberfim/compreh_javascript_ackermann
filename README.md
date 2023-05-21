@@ -1,2 +1,2 @@
-# compreh_javascript_ackermann
-Comprehencsive JavaScript - Philip Ackermann
+# Comprehensive JavaScript - Philip Ackermann
+Professional JavaScript Handbook - Rheinwerk Computing
