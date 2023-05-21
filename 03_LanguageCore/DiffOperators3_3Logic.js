@@ -29,3 +29,20 @@ let c3 = false;
 c1 ??= 5; // the left hand side value is NOT null or undefined so it is assigned the right hand side value --> 7
 c2 ??= null; // the left hand side value is null or undefined so it is assigned the right hand side value --> 7
 c3 ??= false; // the left hand side value is NOT null or undefined so it is assigned the right hand side value --> false
+
+// Example ES2021 - logical assignment operators to initialize an object property
+const john = {
+  fName: 'John',
+};
+
+john.fName ||= 'James';
+john.lName ||= 'Doe';
+console.log(john); // { fName: 'John', lName: 'Doe' }
+
+// Example Pre-ES2021 logical assignment syntax
+const paul = {
+  fName: 'Paul',
+};
+paul.fName || (paul.fName = 'James');
+paul.lName || (paul.lName = 'Doe');
+console.log(paul); // { fName: 'Paul', lName: 'Doe' }
