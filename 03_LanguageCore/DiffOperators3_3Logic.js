@@ -46,3 +46,38 @@ const paul = {
 paul.fName || (paul.fName = 'James');
 paul.lName || (paul.lName = 'Doe');
 console.log(paul); // { fName: 'Paul', lName: 'Doe' }
+
+// Operators for Special Operations
+const randNum = Math.random();
+// ternary <condition> ? <if true value> : <if false value>;
+const result = randNum > 0.5 ? '...is greater than 0.5' : 'is less than 0.5';
+console.log(result);
+
+// delete elements from an array or properties from an object
+const myNumArr = [1, 2, 3, 4, 5];
+delete myNumArr[2];
+console.log(myNumArr); // [ 1, 2, <1 empty item>, 4, 5 ]
+
+const person = {
+  name: 'Bill Williams',
+  age: 53,
+  gender: 'male',
+};
+delete person.gender;
+console.log(person); // { name: 'Bill Williams', age: 53 }
+
+// existence of property in object: <'property'> in <object>
+let hasProperty = 'age' in person;
+console.log(hasProperty);
+hasProperty = 'gender' in person;
+console.log(hasProperty);
+
+// Type Verification: <object> instanceof <type>
+const isObjectType = person instanceof Object;
+console.log(isObjectType);
+
+// Type Determination: typeof <Operand>
+let whatIsType = typeof person.age;
+console.log(whatIsType);
+whatIsType = typeof person.name;
+console.log(whatIsType);
