@@ -1,0 +1,15 @@
+{
+  "name": "03_languagecore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "controllingFlow3_4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}

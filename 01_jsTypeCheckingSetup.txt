@@ -1,0 +1,13 @@
+Utilize typescript to improve learning javascript
+
+steps:
+1.) initialize npm
+    npm init -y
+2.) install typescript
+    npm i typescript
+3.) use npx to create a typescript tsconfig.json file for type checking of JavaScript without the transpilation to js
+    npx tsc --init --checkJs --noEmit --rootDir src
+
+
+Also, You can skip step 3 and actually use Typescript from the command line in the dir where your code is
+npx tsc
