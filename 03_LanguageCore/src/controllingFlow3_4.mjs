@@ -64,5 +64,31 @@ switch (Math.floor(Math.random() * 5 + 1)) {
     break;
 }
 
+console.log('\n'); // break viewing space
+
+// nested loops - outer loop
+for (let i = 1; i < 4; i++) {
+  // inner loop
+  for (let j = 1; j < 4; j++) {
+    console.log(`i has the value '${i}', j has the value '${j}'`);
+  }
+}
+
+console.log('\n'); // break viewing space
+
+// jump labels
+const numbersArr = [1, 2, 3, 22, 2];
+outerloop: for (let i = 0; i < numbersArr.length; i++) {
+  const number = numbersArr[i];
+  innerloop: for (let j = i + 1; j < numbersArr.length; j++) {
+    const number2 = numbersArr[j];
+    console.log(`Comparing ${number} with ${number2}`);
+    if (number === number2) {
+      console.log('Same Number Found');
+      continue outerloop;
+    }
+  }
+}
+
 // close the created interface
 rl.close();
