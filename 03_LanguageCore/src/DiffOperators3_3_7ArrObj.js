@@ -32,6 +32,10 @@ const staff = [
 console.log(staff[0].firstName, staff[0].contact?.phone, '\n');
 
 // nested properties via optional chaining operator in a function
+/**
+ * @param {string | any[]} arr
+ * @param {string} fName
+ */
 function getStaffContactPhone(arr, fName) {
   let contact = `${fName} not found`;
   for (let i = 0; i < arr.length; i++) {

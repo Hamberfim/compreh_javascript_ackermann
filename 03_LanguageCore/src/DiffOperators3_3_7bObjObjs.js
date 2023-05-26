@@ -1,6 +1,6 @@
 // optional chaining operator and accessing nested object properties
 
-const staff = {
+const staffObj = {
   1001: {
     firstName: 'john',
     lastName: 'doe',
@@ -32,6 +32,10 @@ const staff = {
 console.log(staff['1001'].firstName, staff['1001'].contact?.phone, '\n');
 
 // nested properties via optional chaining operator as a function
+/**
+ * @param {({ firstName: string; lastName: string; contact: { email: string; phone: string; }; } | { firstName: string; lastName: string; contact: { email: string; phone?: undefined; }; })[]} arr
+ * @param {string} id
+ */
 function getStaffContactPhoneById(arr, id) {
   let contact = `${id} not found`;
   for (const key in arr) {
