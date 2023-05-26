@@ -6,7 +6,7 @@ const rl = readline.createInterface({ input, output });
 
 // let milesDriven = await rl.question('How many miles did you drive? ');
 
-// Controlling Flow of a program nested, complex and assignment
+// Controlling Flow of a program - branching, nested, complex and assignment
 let isAtLeast21 = false;
 let isAtLeast18 = false;
 let isLoggedIn = true;
@@ -38,6 +38,31 @@ if (!isNaN(parseFloat(age)) && isLoggedIn) {
 console.log(`Is logged in: ${isLoggedIn}`);
 console.log(`Is at least 18: ${isAtLeast18}`);
 console.log(`Is at least 21: ${isAtLeast21}`);
+
+// ternary selection operator syntax: <condition> ? <value if true> : <value if false>
+const hasFullAccess =
+  isLoggedIn && isAtLeast21
+    ? console.log('You have full membership access!')
+    : console.log('You do not have full membership access!');
+
+console.log('\n'); // break viewing space
+
+// switch branching
+
+switch (Math.floor(Math.random() * 5 + 1)) {
+  case 1:
+    console.log('☠️  DANGER!');
+    break;
+  case 2:
+    console.log('⚠️  WARNING!');
+    break;
+  case 3:
+    console.log('✅  SUCCESS!');
+    break;
+  default:
+    console.log('👽  UNKNOWN RETURN!');
+    break;
+}
 
 // close the created interface
 rl.close();
