@@ -24,11 +24,21 @@
 // }
 
 // refactor
+// function checkAge(age) {
+//   if (isNaN(parseFloat(age))) {
+//     throw new Error(`input must be a number`);
+//   } else if (age < 0) {
+//     throw new Error('Age must be a positive number.');
+//   }
+//   return true;
+// }
+
+// refactor
 function checkAge(age) {
   if (isNaN(parseFloat(age))) {
-    throw new Error(`input must be a number`);
+    throw new TypeError(`input must be a number`);
   } else if (age < 0) {
-    throw new Error('Age must be a positive number.');
+    throw new RangeError('Age must be a positive number.');
   }
   return true;
 }
