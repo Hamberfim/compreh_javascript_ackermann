@@ -35,15 +35,43 @@
 
 // refactor
 function checkAge(age) {
+  // @ts-ignore
   if (isNaN(parseFloat(age))) {
-    throw new TypeError(`input must be a number`);
+    throw new TypeError('Input must be a number.');
+    // @ts-ignore
   } else if (age < 0) {
     throw new RangeError('Age must be a positive number.');
   }
   return true;
 }
 
-console.log(checkAge(22)); // true
-console.log(checkAge(0)); // true
-console.log(checkAge('36')); // true
-console.log(checkAge('pizza')); // error
+// add try/catch to each function call
+try {
+  console.log(checkAge(22)); // true
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  console.log(checkAge(0)); // true
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  console.log(checkAge('36')); // true
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  console.log(checkAge('-40')); // error
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  console.log(checkAge('pizza')); // error
+} catch (error) {
+  console.log(error);
+}
