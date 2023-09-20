@@ -1,0 +1,41 @@
+/*-----------------------*/
+/* friendlyErrOut.css */
+/*-----------------------*/
+.row {
+  margin-bottom: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+h3 {
+  margin: 0;
+}
+
+#message {
+  color: red;
+  font-style: italic;
+}
+
+.container {
+  margin: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e7e9eb;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+fieldset {
+  border-radius: 5px;
+}
+
+label {
+  display: inline;
+}
+
+input {
+  display: inline;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  display: inline;
+}
