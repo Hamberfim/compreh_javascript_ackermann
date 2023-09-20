@@ -1,21 +1,32 @@
 /*-----------------------*/
 /* friendlyErrOut.css */
 /*-----------------------*/
+body {
+  margin: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e7e9eb;
+}
 .row {
   margin-bottom: 0.9rem;
   margin-left: 0.5rem;
 }
 
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
 h3 {
   margin: 0;
+  font-weight: 400;
 }
 
 #message {
-  color: red;
-  font-style: italic;
+  margin: 0.09rem;
+  color: #dd0000;
 }
 
-.container {
+.main {
   margin: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #e7e9eb;
@@ -38,4 +49,8 @@ input {
 
 button {
   display: inline;
+}
+
+#completed {
+  color: green;
 }
