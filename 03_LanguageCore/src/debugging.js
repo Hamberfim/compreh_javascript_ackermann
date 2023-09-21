@@ -1,4 +1,8 @@
 'use strict';
+
+/**
+ * The function `findDuplicates` finds and logs any duplicate numbers in an array.
+ */
 function findDuplicates() {
   const numbers = [2, 4, 5, 2, 5, 8, 5, 4711];
   for (let i = 0; i < numbers.length; i++) {
@@ -11,4 +15,5 @@ function findDuplicates() {
     }
   }
 }
+
 document.addEventListener('DOMContentLoaded', findDuplicates);
