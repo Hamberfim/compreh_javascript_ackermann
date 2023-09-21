@@ -1,5 +1,10 @@
 'use strict';
 //
+/**
+ * The function checks the age input and displays a message based on the age range.
+ * @param {string | number} age - The age parameter is a number that represents a person's age.
+ * @returns true.
+ */
 function checkAge(age) {
   if (isNaN(parseFloat(age))) {
     throw new TypeError('Age must be a number!');
@@ -15,6 +20,10 @@ function checkAge(age) {
   return true;
 }
 
+/**
+ * The function "enter" takes the value of an input field, checks if it is a valid age, and displays an
+ * error message or a success message accordingly.
+ */
 function enter() {
   const age = document.querySelector('#age').value;
   try {
@@ -27,6 +36,9 @@ function enter() {
   }
 }
 
+/**
+ * The function "reset" clears the error message, message, age input value, and completed text content.
+ */
 function reset() {
   document.querySelector('#errMsg').textContent = '';
   document.querySelector('#message').textContent = '';

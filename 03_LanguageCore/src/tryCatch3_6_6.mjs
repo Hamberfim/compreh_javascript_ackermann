@@ -34,6 +34,15 @@
 // }
 
 // refactor
+/**
+ * The `checkAge` function is a validation function that checks if the input `age` is a valid age.
+ * It first checks if the input is not a number by using `isNaN(parseFloat(age))`.
+ * If it is not a number, it throws a `TypeError` with the message "Input must be a number."
+ * If the input is a number, it then checks if the age is less than 0.
+ * If it is, it throws a `RangeError` with the message "Age must be a positive number." If the input passes both checks, it returns `true`.
+ * @param {*} age
+ * @returns
+ */
 function checkAge(age) {
   // @ts-ignore
   if (isNaN(parseFloat(age))) {

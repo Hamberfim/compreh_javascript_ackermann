@@ -33,8 +33,12 @@ console.log(staff[0].firstName, staff[0].contact?.phone, '\n');
 
 // nested properties via optional chaining operator in a function
 /**
- * @param {string | any[]} arr
- * @param {string} fName
+ * The function `getStaffContactPhone` takes an array of staff objects and a first name as parameters,
+ * and returns the contact phone number for the staff member with the given first name, or a message
+ * indicating that the staff member was not found or has no phone contact.
+ * @param {string | any[]} arr - An array of objects representing staff members. Each object has properties such as
+ * firstName and contact, which contains information about the staff member's contact details.
+ * @param {string} fName - The `fName` parameter is a string representing the first name of a staff member.
  */
 function getStaffContactPhone(arr, fName) {
   let contact = `${fName} not found`;

@@ -32,9 +32,14 @@ const staffObj = {
 console.log(staff['1001'].firstName, staff['1001'].contact?.phone, '\n');
 
 // nested properties via optional chaining operator as a function
+
 /**
- * @param {({ firstName: string; lastName: string; contact: { email: string; phone: string; }; } | { firstName: string; lastName: string; contact: { email: string; phone?: undefined; }; })[]} arr
- * @param {string} id
+ * The function `getStaffContactPhoneById` takes an array of staff objects and an ID as parameters, and
+ * returns the phone contact information for the staff member with the matching ID.
+ * @param {({ firstName: string; lastName: string; contact: { email: string; phone: string; }; } | { firstName: string; lastName: string; contact: { email: string; phone?: undefined; }; })[]} arr - An array of objects containing staff information. Each object has properties such as
+ * id, firstName, and contact.
+ * @param {string} id - The `id` parameter is the unique identifier of the staff member whose contact phone
+ * number we want to retrieve.
  */
 function getStaffContactPhoneById(arr, id) {
   let contact = `${id} not found`;
