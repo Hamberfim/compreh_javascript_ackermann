@@ -64,9 +64,11 @@ function tagFunction(fixedStringsParts, ...variableReplacements) {
 const name = 'john doe';
 let age = 44;
 
+// @ts-ignore
 let message = tagFunction`My name is ${name}, I am ${age} years old.`;
 console.log(message);
 age = 88;
+// @ts-ignore
 message = tagFunction`My name is ${name}, I am ${age} years old.`;
 console.log(message);
 
