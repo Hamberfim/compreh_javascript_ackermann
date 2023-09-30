@@ -37,3 +37,31 @@ console.log(`${bookObjFromEntries.title} \n${bookObjFromEntries.author} \n${book
 bookObjFromEntries.displayDescription();
 
 console.log('----- Object via Constructor Functions -----');
+function JavaScriptBook(title, price, author, isbn) {
+  this.title = title;
+  this.price = price;
+  this.author = author;
+  this.isbn = isbn;
+  this.displayDescription = function () {
+    console.log(`${this.author}: ${this.title}`);
+  };
+}
+const jsBook = new JavaScriptBook('JavaScript: The Comprehensive Guide', 59.99, 'Philip Ackermann', '978-1-4932-2286-5');
+const nodeBook = new JavaScriptBook('Node.js: The Comprehensive Guide', 59.99, 'Sebastian Springer', '978-1-4932-2292-6');
+jsBook.displayDescription();
+nodeBook.displayDescription();
+
+console.log('----- Objects Using Classes -----');
+class NodeJSBook {
+  constructor(title, price, author, isbn) {
+    this.title = title;
+    this.price = price;
+    this.author = author;
+    this.isbn = isbn;
+  }
+  displayDescription = function () {
+    console.log(`${this.author}: ${this.title}`);
+  };
+}
+const nodeJSBook = new NodeJSBook('Node.js: The Comprehensive Guide', 59.99, 'Sebastian Springer', '978-1-4932-2292-6');
+nodeJSBook.displayDescription();
