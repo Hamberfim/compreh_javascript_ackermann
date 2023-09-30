@@ -1,3 +1,4 @@
+'use strict';
 // primitive vs reference types
 
 // Primitive Example
@@ -33,3 +34,11 @@ console.log(typeof refInput); // object - reference type
 console.log('-----instanceof-------');
 console.log(primInput instanceof Object);
 console.log(refInput instanceof Object);
+
+console.log('-----Array.isArray(arg)-------');
+const myStrArr = ['Tom', 'Sarah', 'Frank', 'Lisa'];
+const myNumArr = [1, 2, 3, 4, 5, 6];
+const myStr = 'This is a string.';
+console.log(Array.isArray(myStrArr));
+console.log(Array.isArray(myNumArr));
+console.log(Array.isArray(myStr));
