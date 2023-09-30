@@ -65,3 +65,69 @@ class NodeJSBook {
 }
 const nodeJSBook = new NodeJSBook('Node.js: The Comprehensive Guide', 59.99, 'Sebastian Springer', '978-1-4932-2292-6');
 nodeJSBook.displayDescription();
+
+console.log('----- Objects via Object.create() function helper method -----');
+// this method expects the prototype of the object to be created followed by an object with names key/value object pairs
+// this object creation method also allows for property attributes to configure individual object properties
+// these attributes are: writable, enumerable, configurable.
+const bestJsBook = Object.create(Object.prototype, {
+  title: {
+    value: 'JavaScript: The Comprehensive Guide',
+    // title cant be changed
+    writable: false, // can this value be overwritten
+    enumerable: true, // is this property include when iterating over this objects properties
+    configurable: true, // can this value have it's attributes re-configures afterwards
+  },
+  price: {
+    value: 59.99,
+    // price can be changed
+    writable: true, // can this value be overwritten
+    enumerable: true, // is this property include when iterating over this objects properties
+    configurable: true, // can this value have it's attributes re-configures afterwards
+  },
+  author: {
+    value: 'Philip Ackermann',
+    writable: false, // can this value be overwritten
+    enumerable: true, // is this property include when iterating over this objects properties
+    configurable: true, // can this value have it's attributes re-configures afterwards
+  },
+  isbn: {
+    value: '978-1-4932-2286-5',
+    writable: false, // can this value be overwritten
+    // no output during iteration
+    enumerable: false, // is this property include when iterating over this objects properties
+    configurable: true, // can this value have it's attributes re-configures afterwards
+  },
+  displayDescription: {
+    value: function () {
+      console.log(`${this.author}: ${this.title}`);
+    },
+  },
+});
+// iterate over object and it properties
+for (let property in bestJsBook) {
+  console.log(property);
+}
+// bestJsBook.title = 'Some other title'; // TypeError: Cannot assign to read only property 'title' of object
+console.log('original price:', bestJsBook.price);
+bestJsBook.price = 10.99;
+console.log('writable:', bestJsBook.price);
+console.log('----- display the configuration of an objects property -----');
+const propertyDescriptor = Object.getOwnPropertyDescriptor(bestJsBook, 'title');
+console.log(propertyDescriptor);
+console.log('----- display the configuration of multiple properties of an object -----');
+const allPropertyDescriptors = Object.getOwnPropertyDescriptors(bestJsBook);
+console.log(allPropertyDescriptors);
+console.log('----- dot.notation vs bracket["notation"] -----');
+console.log(bestJsBook.price);
+console.log(bestJsBook['price']);
+// requires the use of bracket notation because of the property key-name
+const person = {
+  'first-name': 'Jon',
+  'last-name': 'Doe',
+};
+console.log(person['first-name'], person['last-name']);
+console.log('----- Using access properties -----');
+// access properties:
+//      set - specifies which function is called when there is write access,
+//      get - specifies which function is called when there is read access
