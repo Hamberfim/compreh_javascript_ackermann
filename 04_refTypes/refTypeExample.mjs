@@ -1,6 +1,5 @@
 'use strict';
 // primitive vs reference types
-
 // Primitive Example
 function primExample(input) {
   console.log('In primExample', input);
