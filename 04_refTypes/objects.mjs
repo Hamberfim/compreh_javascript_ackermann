@@ -121,6 +121,13 @@ console.log(allPropertyDescriptors);
 console.log('----- dot.notation vs bracket["notation"] -----');
 console.log(bestJsBook.price);
 console.log(bestJsBook['price']);
+const productOne = {};
+productOne['name'] = 'Chewing Gum';
+productOne['price'] = 1.49;
+productOne['productDescription'] = function () {
+  console.log(`${this.name} is $${this.price}`);
+};
+productOne.productDescription();
 // requires the use of bracket notation because of the property key-name
 const person = {
   'first-name': 'Jon',
@@ -128,6 +135,55 @@ const person = {
 };
 console.log(person['first-name'], person['last-name']);
 console.log('----- Using access properties -----');
-// access properties:
+// data encapsulation using access properties:
 //      set - specifies which function is called when there is write access,
 //      get - specifies which function is called when there is read access
+const item = {
+  _itemName: 'candy bar',
+  set itemName(newItemName) {
+    if (typeof newItemName === 'string') {
+      console.log(' -- set new item name');
+      this._itemName = newItemName;
+    } else {
+      throw new TypeError('Make must be a string');
+    }
+  },
+
+  get itemName() {
+    console.log(' -- returning item name');
+    return this._itemName;
+  },
+};
+console.log(item.itemName);
+item.itemName = 'Pizza';
+console.log(item.itemName);
+
+console.log('----- Defining Objects properties and method using defineProperty() function helper method -----');
+const productTwo = {};
+Object.defineProperty(productTwo, 'name', { value: 'Brisket sandwich', writable: true, enumerable: true, configurable: true });
+Object.defineProperty(productTwo, 'price', { value: 5.99, writable: true, enumerable: true, configurable: true });
+console.log(productTwo);
+const productThree = {};
+Object.defineProperties(productThree, {
+  name: {
+    value: 'French Fries',
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  },
+  price: {
+    value: 1.99,
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  },
+  calories: {
+    value: 370,
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  },
+});
+console.log(productThree);
+delete productThree.calories;
+console.log(productThree);
