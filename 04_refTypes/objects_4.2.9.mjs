@@ -1,5 +1,5 @@
 'use strict';
-// define item Object, it's properties and property descriptors
+// define item Object, it's properties and property attributes/descriptors
 const item = {};
 Object.defineProperties(item, {
   make: {
@@ -21,7 +21,7 @@ Object.defineProperties(item, {
     configurable: false,
   },
   color: {
-    value: 'black',
+    value: 'Black',
     writable: false,
     enumerable: true,
     configurable: false,
@@ -46,7 +46,7 @@ Object.defineProperties(item, {
 
 item.displayItemDescription();
 console.log('--- Using a for-in loop ---');
-// outputting the Objects properties and property descriptors via for-in loop
+// outputting the Objects properties and property via for-in loop (plus attributes/descriptors)
 for (let property in item) {
   let propertyDescriptor = Object.getOwnPropertyDescriptor(item, property);
   console.log(`Name: ${property}, Value: ${item[property]}`);
@@ -55,14 +55,20 @@ for (let property in item) {
   console.log(` ---- Configurable: ${propertyDescriptor.configurable}\n`);
 }
 
-// outputting the Objects properties and property descriptors via helper methods
-console.log('--- Using Object .keys/.values helper methods and a for loop ---');
-const itemsKeys = Object.keys(item);
-const itemValues = Object.values(item);
+// outputting the Objects properties and property via helper methods (plus attributes/descriptors)
+const itemEntries = Object.entries(item); // helper method produces an array of arrays of names and values
+const itemsKeys = Object.keys(item); // helper method produces an array of names
+const itemValues = Object.values(item); // helper method produces an array of values
+console.log('Entries:', itemEntries);
+console.log('Keys:', itemsKeys);
+console.log('Values:', itemValues);
+console.log('\n--- Using Object .keys/.values helper methods and a for loop ---');
 for (let i = 0; i < itemsKeys.length; i++) {
   const propertyName = itemsKeys[i];
   const propertyValue = itemValues[i];
-  const propertyDescriptor = Object.getOwnPropertyDescriptor(item, itemsKeys[i]);
+  // Object.getOwnPropertyDescriptor(<Object>, <ObjectPropertyName>)
+  const propertyDescriptor = Object.getOwnPropertyDescriptor(item, itemsKeys[i]); // an Objects property value and its attribute settings
+  // console.log('propertyDescriptor', propertyDescriptor);
   console.log(`Name: ${propertyName}, Value: ${propertyValue}`);
   console.log(` .... Writable: ${propertyDescriptor.writable}`);
   console.log(` .... Enumerable: ${propertyDescriptor.enumerable}`);
