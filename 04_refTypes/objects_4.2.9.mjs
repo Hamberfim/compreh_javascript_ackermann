@@ -1,22 +1,7 @@
 'use strict';
-// outputting object properties and methods via for-in loop
-// const kiaCar = {
-//   // properties - the state of the object
-//   make: 'Kia',
-//   model: 'Soul',
-//   year: 2016,
-//   color: 'black',
-//   price: 18000,
-//   // methods - the behavior of the object
-//   displayDescription: function () {
-//     console.log(`A ${kiaCar.year} ${kiaCar.color} ${kiaCar.make} ${kiaCar.model} for $${kiaCar.price}`);
-//   },
-// };
-// kiaCar.displayDescription();
-
-// re-define kiaCar and it's properties
-const kiaCar = {};
-Object.defineProperties(kiaCar, {
+// define item object, it's properties and property descriptors
+const item = {};
+Object.defineProperties(item, {
   make: {
     value: 'Kia',
     writable: false,
@@ -48,9 +33,9 @@ Object.defineProperties(kiaCar, {
     configurable: false,
   },
 
-  displayDescription: {
+  displayItemDescription: {
     value: function () {
-      console.log(`A ${kiaCar.year} ${kiaCar.color} ${kiaCar.make} ${kiaCar.model} for $${kiaCar.price}`);
+      console.log(`A ${item.year} ${item.color} ${item.make} ${item.model} for $${item.price}\n`);
     },
     writable: false,
     enumerable: false,
@@ -58,6 +43,12 @@ Object.defineProperties(kiaCar, {
   },
 });
 
-const propDesc = Object.getOwnPropertyDescriptors(kiaCar);
-kiaCar.displayDescription();
-console.log(propDesc);
+item.displayItemDescription();
+// outputting the objects properties and property descriptors via for-in loop
+for (let property in item) {
+  let propertyDescriptor = Object.getOwnPropertyDescriptor(item, property);
+  console.log(`Name: ${property}, Value: ${item[property]}`);
+  console.log(` ---- Writable: ${propertyDescriptor.writable}`);
+  console.log(` ---- Enumerable: ${propertyDescriptor.enumerable}`);
+  console.log(` ---- Configurable: ${propertyDescriptor.configurable}\n`);
+}
