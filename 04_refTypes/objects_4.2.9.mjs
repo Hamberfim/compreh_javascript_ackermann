@@ -1,21 +1,21 @@
 'use strict';
 // outputting object properties and methods via for-in loop
-const kiaCar = {
-  // properties - the state of the object
-  make: 'Kia',
-  model: 'Soul',
-  year: 2016,
-  color: 'black',
-  price: 18000,
-  // methods - the behavior of the object
-  displayDescription: function () {
-    console.log(`A ${kiaCar.year} ${kiaCar.color} ${kiaCar.make} ${kiaCar.model} for $${kiaCar.price}`);
-  },
-};
-kiaCar.displayDescription();
+// const kiaCar = {
+//   // properties - the state of the object
+//   make: 'Kia',
+//   model: 'Soul',
+//   year: 2016,
+//   color: 'black',
+//   price: 18000,
+//   // methods - the behavior of the object
+//   displayDescription: function () {
+//     console.log(`A ${kiaCar.year} ${kiaCar.color} ${kiaCar.make} ${kiaCar.model} for $${kiaCar.price}`);
+//   },
+// };
+// kiaCar.displayDescription();
 
 // re-define kiaCar and it's properties
-//const kiaCar = {};
+const kiaCar = {};
 Object.defineProperties(kiaCar, {
   make: {
     value: 'Kia',
@@ -59,5 +59,5 @@ Object.defineProperties(kiaCar, {
 });
 
 const propDesc = Object.getOwnPropertyDescriptors(kiaCar);
-// kiaCar.displayDescription();
+kiaCar.displayDescription();
 console.log(propDesc);
