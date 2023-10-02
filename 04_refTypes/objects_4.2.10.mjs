@@ -26,9 +26,24 @@ console.log(Object.isExtensible(john));
 Object.preventExtensions(john);
 // john.firstName = 'James';  // TypeError: Cannot add property firstName, object is not extensible
 console.log(Object.isExtensible(john));
-// but the property attributes can be changed !
+// but the property attributes can be changed (are configurable) !
 console.log(Object.getOwnPropertyDescriptor(john, 'firstName').enumerable);
 Object.defineProperty(john, 'firstName', { enumerable: false });
 console.log(Object.getOwnPropertyDescriptor(john, 'firstName').enumerable);
 
-// sealing Objects
+// sealing Objects - can't be changed nor can the attributes
+const sarah = {
+  firstName: 'Sarah',
+  lastName: 'Doe',
+};
+console.log(Object.isSealed(sarah));
+Object.seal(sarah);
+console.log(Object.isSealed(sarah));
+
+// freezing Objects - insures that even existing values of properties and methods can't be changed
+const bob = {
+  firstName: 'Bob',
+  lastName: 'Doe',
+};
+Object.freeze(bob);
+console.log(Object.isFrozen(bob));
