@@ -56,20 +56,25 @@ console.log(numbers);
 const contacts = [
   {
     firstName: 'Zoiburg',
-    email: 'zoibur@fake.com',
+    email: 'zoiburg@fake.com',
   },
   {
     firstName: 'Leelah',
-    email: 'leelah@fake.com',
+    email: 'alphalady@fake.com',
   },
   {
     firstName: 'Hermies',
-    email: 'hermies@fake.com',
+    email: 'congaline158@fake.com',
   },
 ];
 function compareFirstName(contact1, contact2) {
-  return contact1.firstName.localCompare(contact2.firstName);
+  return contact1.firstName.localeCompare(contact2.firstName);
 }
 function compareEmail(contact1, contact2) {
-  return contact1.email.localCompare(contact2.email);
+  return contact1.email.localeCompare(contact2.email);
 }
+console.log(contacts);
+contacts.sort(compareFirstName);
+console.log('By First Name:', contacts);
+contacts.sort(compareEmail);
+console.log('By email:', contacts);
