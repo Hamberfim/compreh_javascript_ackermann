@@ -78,3 +78,28 @@ contacts.sort(compareFirstName);
 console.log('By First Name:', contacts);
 contacts.sort(compareEmail);
 console.log('By email:', contacts);
+
+// using arrays as a stack - LIFO - last in, first out.
+console.log('\n--- Stack LIFO ---');
+let stackArr = ['a', 'b', 'c'];
+console.log(stackArr);
+stackArr.push('d');
+console.log(stackArr);
+stackArr.pop();
+console.log(stackArr);
+// using arrays as a queue - FFO - First in, first out.
+console.log('\n--- Queue FIFO ---');
+stackArr.push('d');
+console.log(stackArr);
+stackArr.shift();
+console.log(stackArr);
+console.log('\n---search an array starting from the beginning ---');
+stackArr = ['a', 'b', 'c', 'd', 'c', 'a'];
+console.log(stackArr.indexOf('c'));
+console.log('\n---search an array starting from the end ---');
+console.log(stackArr.lastIndexOf('c'));
+console.log('\n--- find the first occurrence of an item that meet a condition ---');
+const result = [2, 3, 4, 5, 6, 7, 2, 3, 4, 5].find((item) => item % 2 !== 0);
+console.log(result);
+const result2 = [2, 3, 4, 5, 6, 7, 2, 3, 4, 5].findIndex((item) => item % 2 !== 0);
+console.log(result2);
