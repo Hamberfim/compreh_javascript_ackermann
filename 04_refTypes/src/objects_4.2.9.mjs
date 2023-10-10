@@ -44,14 +44,18 @@ Object.defineProperties(item, {
   },
 });
 
+// @ts-ignore
 item.displayItemDescription();
 console.log('--- Using a for-in loop ---');
 // outputting the Objects properties and property via for-in loop (plus attributes/descriptors)
 for (let property in item) {
   let propertyDescriptor = Object.getOwnPropertyDescriptor(item, property);
   console.log(`Name: ${property}, Value: ${item[property]}`);
+  // @ts-ignore
   console.log(` ---- Writable: ${propertyDescriptor.writable}`);
+  // @ts-ignore
   console.log(` ---- Enumerable: ${propertyDescriptor.enumerable}`);
+  // @ts-ignore
   console.log(` ---- Configurable: ${propertyDescriptor.configurable}\n`);
 }
 
@@ -70,7 +74,10 @@ for (let i = 0; i < itemsKeys.length; i++) {
   const propertyDescriptor = Object.getOwnPropertyDescriptor(item, itemsKeys[i]); // an Objects property value and its attribute settings
   // console.log('propertyDescriptor', propertyDescriptor);
   console.log(`Name: ${propertyName}, Value: ${propertyValue}`);
+  // @ts-ignore
   console.log(` .... Writable: ${propertyDescriptor.writable}`);
+  // @ts-ignore
   console.log(` .... Enumerable: ${propertyDescriptor.enumerable}`);
+  // @ts-ignore
   console.log(` .... Configurable: ${propertyDescriptor.configurable}\n`);
 }
