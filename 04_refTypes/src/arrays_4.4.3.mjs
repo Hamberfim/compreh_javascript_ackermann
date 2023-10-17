@@ -7,6 +7,8 @@ const persons = [
       email: "john@fake.org",
       phone: "555-555-1111",
     },
+    age: 24,
+    hairColor: "brown",
   },
   {
     firstName: "Jane",
@@ -15,6 +17,8 @@ const persons = [
       email: "jane@fake.org",
       phone: "555-555-2222",
     },
+    age: 38,
+    hairColor: "blond",
   },
 ];
 
@@ -47,3 +51,11 @@ const dave = {
 // @ts-ignore
 displayPerson(dave);
 contactInfoOnly(dave);
+
+console.log();
+// copying an objects properties to/from another object
+const { firstName, lastName, ...properties } = persons[0];
+console.log(`${firstName} ${lastName},`, properties);
+
+const john = { firstName, lastName, ...properties };
+console.log(john);
