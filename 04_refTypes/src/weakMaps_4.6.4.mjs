@@ -78,3 +78,50 @@ console.log(localLongPhoneNum.test("515-967-1111")); // false
 const localPhoneNum = /[0-9][0-9][0-9].[0-9][0-9][0-9][0-9]/; // ###-####
 console.log(localPhoneNum.test("515 967 1111")); // true
 console.log(localPhoneNum.test("967-1111")); // true
+
+// predefined classes
+myRegExp = /\d\d\d\s\d\d\d\d/;
+console.log(myRegExp.test("266 1111")); // true
+console.log(myRegExp.test("266-1111")); // false
+myRegExp = /\d\d\d-\d\d\d\d/;
+console.log(myRegExp.test("266-1111")); // true
+
+// limits
+myRegExp = /^S/; // starts with 'S'
+console.log(myRegExp.test("Smith"));
+myRegExp = /h$/; // ends with 'h'
+console.log(myRegExp.test("Smith"));
+myRegExp = /^Smith$/; // exactly 'Smith'
+console.log(myRegExp.test("Smith"));
+console.log(myRegExp.test("Schmiths")); //false
+console.log(myRegExp.test("Sh")); // false
+
+// boundary
+myRegExp = /\btoys\b/;
+console.log(myRegExp.test("The children play with toys."));
+
+// optional occurrences
+myRegExp = /^Smith?$/; // h is optional
+console.log(myRegExp.test("Smit")); // true
+console.log(myRegExp.test("Smith")); // true
+console.log(myRegExp.test("Smiths")); // false
+
+// any number occurrences
+myRegExp = /^Smith*$/;
+console.log(myRegExp.test("Smit")); // true
+console.log(myRegExp.test("Smith")); // true
+console.log(myRegExp.test("Smithhhhh")); // true
+console.log(myRegExp.test("Smiths")); // false
+
+// exact
+myRegExp = /^\d{3}-\d{4}$/; // ###-####
+console.log(myRegExp.test("266-2222")); // true
+console.log(myRegExp.test("1 266 2222")); // false
+console.log(myRegExp.test("abc-2222")); // false
+
+// replacement
+let contactText = "Their private phone number is 515-266-1111";
+console.log(contactText);
+myRegExp = /\d{3}-\d{3}-\d{4}/;
+contactText = contactText.replace(myRegExp, "<number redacted for privacy>");
+console.log(contactText);
