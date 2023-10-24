@@ -21,6 +21,10 @@ console.log("\n--- iteration via the map's index position of each key value ---"
 for (let item of numOfStudioAlbums) {
   console.log(item[0], item[1]);
 }
+console.log("\n--- iteration via destructuring ---");
+for (let [bandName, numStudioAlbums] of numOfStudioAlbums) {
+  console.log(bandName, numStudioAlbums);
+}
 
 console.log("\n--- iteration via entries() ---");
 
