@@ -125,3 +125,16 @@ console.log(contactText);
 myRegExp = /\d{3}-\d{3}-\d{4}/;
 contactText = contactText.replace(myRegExp, "<number redacted for privacy>");
 console.log(contactText);
+
+// functions as function arguments
+function someFunction1(f) {
+  console.log("function1 started");
+  f();
+  console.log("function1 ended");
+}
+
+function someFunction2() {
+  console.log("function2 started");
+  console.log("function2 ended");
+}
+someFunction1(someFunction2);
