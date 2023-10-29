@@ -4,7 +4,7 @@
  *  browser-based runtime environments and is represented by the 'document' global object.
  */
 
-// Example of the document node methods
+// Example of the document node methods using 'color.co' website
 document.title  // current document title
 'Create a Palette - Coolors'
 document.lastModified  // date last modified
