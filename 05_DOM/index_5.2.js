@@ -37,5 +37,16 @@ if (articleElements !== null) {
 }
 
 // by ID and tag name
-let navByID = document.querySelector("#page-nav em");
-navByID.className += " card card body card-title ps-2 p-1"; // += concatenation
+const navByID = document.querySelector("#page-nav em");
+// same as an if
+navByID && (navByID.className += " card card body card-title ps-2 p-1"); // += concatenation
+
+// working with a table
+const tableElement = document.querySelector("table ");
+tableElement && (tableElement.className = "table table-sm table-hover");
+// get by class name
+const evenTableRows = document.querySelectorAll(".odd");
+evenTableRows &&
+  evenTableRows.forEach((rowKey) => {
+    rowKey.style.backgroundColor = "#ccc";
+  });
