@@ -60,11 +60,33 @@ const tableTwoEl = document.querySelector("#tableTwo");
 tableTwoEl && (tableTwoEl.className = "table table-sm table-hover");
 // accessing as a node
 const evenTableRows = document.querySelectorAll(".even");
-console.log(evenTableRows);
+
 // iterate individuals nodes of a node list
-for (let i = 0; i < evenTableRows.length; i++) {
-  const tableRow = evenTableRows.item(i);
-  tableRow.style.backgroundColor = "#cff4fc";
-  tableRow.style.fontStyle = "oblique";
-  tableRow.style.fontWeight = "bolder";
+if (evenTableRows.length > 0) {
+  for (let i = 0; i < evenTableRows.length; i++) {
+    const tableRow = evenTableRows.item(i);
+    tableRow.style.backgroundColor = "#cff4fc";
+    tableRow.style.fontStyle = "oblique";
+    tableRow.style.fontWeight = "bolder";
+  }
+}
+
+// Active node list
+const allDivElements = document.getElementsByTagName("div"); // html collection - active node list
+if (allDivElements.length > 0) {
+  for (let i = 0; i < allDivElements.length; i++) {
+    const item = allDivElements.item(i);
+    item.className = "text-muted";
+    item.style.fontFamily = "serif";
+  }
+}
+
+// form data by name
+const inputRoomSelection = document.getElementsByName("room");
+console.log(inputRoomSelection);
+if (inputRoomSelection.length > 0) {
+  for (let i = 0; i < inputRoomSelection.length; i++) {
+    const radioInput = inputRoomSelection.item(i);
+    console.log(radioInput.value);
+  }
 }
