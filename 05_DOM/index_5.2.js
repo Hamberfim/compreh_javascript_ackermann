@@ -84,9 +84,14 @@ if (allDivElements.length > 0) {
 // form data value by input name
 const inputRoomSelection = document.getElementsByName("room");
 console.log(inputRoomSelection);
+
 if (inputRoomSelection.length > 0) {
   for (let i = 0; i < inputRoomSelection.length; i++) {
     const radioInput = inputRoomSelection.item(i);
     console.log(radioInput.value);
   }
+}
+
+function getRadioClick(value) {
+  console.log(value);
 }
