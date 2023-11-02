@@ -81,7 +81,7 @@ if (allDivElements.length > 0) {
   }
 }
 
-// form data by name
+// form data value by input name
 const inputRoomSelection = document.getElementsByName("room");
 console.log(inputRoomSelection);
 if (inputRoomSelection.length > 0) {
