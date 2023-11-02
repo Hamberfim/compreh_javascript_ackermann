@@ -92,6 +92,23 @@ if (inputRoomSelection.length > 0) {
   }
 }
 
+// get value from user selected radio
 function getRadioClick(value) {
+  const choice1 = document.querySelector("#r1");
+  const choice2 = document.querySelector("#r2");
+  const choice3 = document.querySelector("#r3");
+  if (value === "room1") {
+    choice1.innerHTML = "&nbsp;Luxury Room Selected";
+    choice2.innerHTML = "";
+    choice3.innerHTML = "";
+  } else if (value === "room2") {
+    choice1.innerHTML = "";
+    choice2.innerHTML = "&nbsp;Room Two Selected";
+    choice3.innerHTML = "";
+  } else {
+    choice1.innerHTML = "";
+    choice2.innerHTML = "";
+    choice3.innerHTML = "&nbsp;Room Three Selected";
+  }
   console.log(value);
 }
