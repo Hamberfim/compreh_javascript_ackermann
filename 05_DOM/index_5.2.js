@@ -1,5 +1,9 @@
-/* Selecting elements from the Document Object Model (DOM). */
-//"use strict";
+/** Selecting elements from the Document Object Model (DOM).
+ * getElementsBy-ClassName(), getElementsByTagName() and getElementsByName() return "ACTIVE" node lists
+ * querySelectorAll() return "STATIC" node lists
+ */
+
+"use strict";
 
 // Select the primary semantic tags (header, nav, main, footer) and assign bootstrap 5 classes to them
 const headerElement = document.querySelector("header");
@@ -41,12 +45,26 @@ const navByID = document.querySelector("#page-nav em");
 // same as an if
 navByID && (navByID.className += " card card body card-title ps-2 p-1"); // += concatenation
 
-// working with a table
-const tableElement = document.querySelector("table ");
+// working with first table
+const tableElement = document.querySelector("table");
 tableElement && (tableElement.className = "table table-sm table-hover");
 // get by class name
-const evenTableRows = document.querySelectorAll(".odd");
-evenTableRows &&
-  evenTableRows.forEach((rowKey) => {
+const oddTableRows = document.querySelectorAll(".odd");
+oddTableRows &&
+  oddTableRows.forEach((rowKey) => {
     rowKey.style.backgroundColor = "#ccc";
   });
+
+// working with second table
+const tableTwoEl = document.querySelector("#tableTwo");
+tableTwoEl && (tableTwoEl.className = "table table-sm table-hover");
+// accessing as a node
+const evenTableRows = document.querySelectorAll(".even");
+console.log(evenTableRows);
+// iterate individuals nodes of a node list
+for (let i = 0; i < evenTableRows.length; i++) {
+  const tableRow = evenTableRows.item(i);
+  tableRow.style.backgroundColor = "#cff4fc";
+  tableRow.style.fontStyle = "oblique";
+  tableRow.style.fontWeight = "bolder";
+}
