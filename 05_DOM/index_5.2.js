@@ -73,9 +73,14 @@ if (evenTableRows.length > 0) {
 
 // selection by breadcrumb
 const sarahTrEmail = document.querySelector("table tbody tr:nth-child(4) td:nth-child(2)");
-console.log(sarahTrEmail);
+// console.log(sarahTrEmail);
 sarahTrEmail && (sarahTrEmail.style.border = "2px solid red"); // if 'sarahTrEmail' is not null then apply style
-sarahTrEmail && (sarahTrEmail.style.backgroundColor = "yellow");
+sarahTrEmail && (sarahTrEmail.style.backgroundColor = "moccasin");
+
+const garryName = document.querySelector("#tableTwo tbody tr:nth-child(3) td");
+console.log(garryName);
+garryName && (garryName.style.border = "2px solid red");
+garryName && (garryName.style.backgroundColor = "rgba(255,255,0,.4)");
 
 // Active node list
 const allDivElements = document.getElementsByTagName("div"); // html collection - active node list
