@@ -71,6 +71,12 @@ if (evenTableRows.length > 0) {
   }
 }
 
+// selection by breadcrumb
+const sarahTrEmail = document.querySelector("table tbody tr:nth-child(4) td:nth-child(2)");
+console.log(sarahTrEmail);
+sarahTrEmail && (sarahTrEmail.style.border = "2px solid red"); // if 'sarahTrEmail' is not null then apply style
+sarahTrEmail && (sarahTrEmail.style.backgroundColor = "yellow");
+
 // Active node list
 const allDivElements = document.getElementsByTagName("div"); // html collection - active node list
 if (allDivElements.length > 0) {
@@ -83,12 +89,12 @@ if (allDivElements.length > 0) {
 
 // form data value by input name
 const inputRoomSelection = document.getElementsByName("room");
-console.log(inputRoomSelection);
+// console.log(inputRoomSelection);
 
 if (inputRoomSelection.length > 0) {
   for (let i = 0; i < inputRoomSelection.length; i++) {
     const radioInput = inputRoomSelection.item(i);
-    console.log(radioInput.value);
+    // console.log(radioInput.value);
   }
 }
 
@@ -110,5 +116,5 @@ function getRadioClick(value) {
     choice2.innerHTML = "";
     choice3.innerHTML = "&nbsp;Room Three Selected";
   }
-  console.log(value);
+  // console.log(value);
 }
