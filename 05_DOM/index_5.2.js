@@ -90,6 +90,7 @@ tableHeads &&
     col.style.color = "white";
     col.className = "py-1 ps-2";
   });
+
 const tableThree = document.querySelectorAll("#tableThree td");
 // console.log(tableThree);
 tableThree &&
