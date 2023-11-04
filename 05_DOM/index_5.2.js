@@ -78,9 +78,38 @@ sarahTrEmail && (sarahTrEmail.style.border = "2px solid red"); // if 'sarahTrEma
 sarahTrEmail && (sarahTrEmail.style.backgroundColor = "moccasin");
 
 const garryName = document.querySelector("#tableTwo tbody tr:nth-child(3) td");
-console.log(garryName);
+// console.log(garryName);
 garryName && (garryName.style.border = "2px solid red");
 garryName && (garryName.style.backgroundColor = "rgba(255,255,0,.4)");
+
+// third table
+const tableHeads = document.querySelectorAll("#tableThree thead th");
+tableHeads &&
+  tableHeads.forEach((col) => {
+    col.style.backgroundColor = "black";
+    col.style.color = "white";
+    col.className = "py-1 ps-2";
+  });
+const tableThree = document.querySelectorAll("#tableThree td");
+// console.log(tableThree);
+tableThree &&
+  tableThree.forEach((cell) => {
+    cell.className = "py-1 ps-2";
+  });
+// every other td element selection by breadcrumb
+const tableRowsOdd = document.querySelectorAll("#tableThree tbody tr:nth-child(odd)");
+// console.log(tableRows);
+tableRowsOdd &&
+  tableRowsOdd.forEach((row) => {
+    row.style.backgroundColor = "rgba(100,100,0,.4)";
+  });
+
+const tableColTwo = document.querySelectorAll("#tableThree tbody td:nth-child(2)");
+// console.log(tableColTwo);
+tableColTwo &&
+  tableColTwo.forEach((row) => {
+    row.style.border = "2px solid orange";
+  });
 
 // Active node list
 const allDivElements = document.getElementsByTagName("div"); // html collection - active node list
