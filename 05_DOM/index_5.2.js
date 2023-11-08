@@ -153,3 +153,8 @@ function getRadioClick(value) {
   }
   // console.log(value);
 }
+
+// Selecting a parent element of an element
+const firstTable = document.querySelector("table");
+console.log(firstTable.parentNode);
+console.log(firstTable.parentElement);
